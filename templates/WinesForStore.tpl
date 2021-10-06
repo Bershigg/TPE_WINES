@@ -3,21 +3,30 @@
 
 
 <h1>{$titulo}</h1>
-
 <div class="container">
     <table class="table table-dark">
         <tr scope="col">
-            <th>Nombre</th>            
+            <th>Nombre</th>
+            <th>Estilo</th>
+            <th>Bodega</th>
+            <th>Precio</th>
         </tr>
-        <tr>
-            {foreach from=$winesForStore item=$i}
-                <tr>    
-                    <td> {$i->NameWine} </td>        
-                </tr>
-            {/foreach}
-        </tr>
+                <tr>
+                    {foreach from=$winesForStore item=$wine}
+                        <tr>    
+                            <td> <a href="viewWine/{$wine->NameWine}">{$wine->NameWine}</a> </td>
+                            <td> {$wine->Style} </td>
+                            <td> {$wine->NameStore} </td>
+                            <td> {$wine->Price} </td>
+                        </tr>
+                    {/foreach}
+                
     </table>
 
+   
+
+    <a href="showListStore">Listado de bodegas</a>
     <a href="home">Listado de vinos</a>
+
 </div>
 {include file='templates/footer.tpl'}

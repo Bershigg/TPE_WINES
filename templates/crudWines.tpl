@@ -9,16 +9,18 @@
             <th>Estilo</th>
             <th>Bodega</th>
             <th>Precio</th>
+            <th>Borrar</th>
+            <th>Modificar</th>
         </tr>
                 <tr>
                     {foreach from=$wines item=$wine}
                         <tr>    
-                            <td> <a href="viewWine/{$wine->id_Wine}">{$wine->NameWine}</a> </td>
+                            <td> <a href="viewWine/{$wine->NameWine}">{$wine->NameWine}</a> </td>
                             <td> {$wine->Style} </td>
                             <td> {$wine->NameStore} </td>
                             <td> {$wine->Price} </td>
                             <td> <a class="btn btn-danger" href="deleteWine/{$wine->id_Wine}">Borrar</a></td>                
-                            <td> <a class="btn btn-success" href="updateWine/{$wine->id_Wine}">Modificar</a></td>                                       
+                            <td> <a class="btn btn-success" href="goUpdateWine/{$wine->id_Wine}">Modificar</a></td>                                       
                         </tr>
                     {/foreach}
                 
@@ -27,7 +29,11 @@
     <form action="createWine" method="POST">
         <input type="text" name="nameWines" id="nameWines" placeholder="Nombre Vino">
         <input type="text" name="style" id="style" placeholder="Estilo">
-        <input type="number" name="id_store" id="id_store" placeholder="Bodega">
+        <select name="id_store">
+            {foreach from=$stores item=$store}
+                <option value="id_store">{$store->NameStore}</option>
+            {/foreach}  
+        </select>
         <input type="number" name="price" id="price" placeholder="Precio">
         <input type="submit" class="btn btn-primary" value="Save">
     </form>
@@ -37,30 +43,3 @@
 {include file='templates/footer.tpl'}
 
 
-{*{include file = 'templates/header.tpl'}
-
-<h1>{$titulo}</h1>
-
-<ul> 
-
-    {foreach from=$tasks item=$task}
-        <li class = "{if $task->finalizada} finalizada {/if}"> 
-            <a href= "viewTask/{$task->id_tarea}"> {$task->titulo}</a>: {$task->descripcion}
-            <a href="deleteTask/{$task->id_tarea}">Borrar</a>
-            {if !$task->finalizada}
-            <a href="updateTask/{$task->id_tarea}">Finalizar</a>
-            {/if}
-        </li> 
-    {/foreach}
-    
-</ul>
-<h2>Crear Tarea</h2>
-<form action="createTask" method="post">
-    <input type="text" name="title" id="title">
-    <input type="text" name="description" id="description">
-    <input type="number" name="priority" id="priority">
-    <input type="checkbox" name="done" id="done">
-    <input type="submit" value="Guardar">
-</form>
-
-{include file = 'templates/footer.tpl'}*}

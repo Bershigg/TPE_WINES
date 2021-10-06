@@ -1,6 +1,7 @@
 <?php
 require_once "./smarty-3.1.39/libs/Smarty.class.php";
-class WineView{
+
+class PublicView{
     
     private $smarty;
 
@@ -26,7 +27,7 @@ class WineView{
     }
 
     function showWinesForStore($winesForStore){
-        $this->smarty->assign('titulo', 'Lista de vinos por bodegas');
+        $this->smarty->assign('titulo', 'Lista de vinos de');
         $this->smarty->assign('winesForStore' , $winesForStore);
 
         $this->smarty->display('templates/WinesForStore.tpl');
@@ -37,29 +38,10 @@ class WineView{
         header("Location: ".BASE_URL."home");
     }
 
-    function showCrudLocation(){
-        header("Location: ".BASE_URL."crudWines");
-    }
-
-    function showwine($wine){
-        $this->smarty->assign('Wine', $wine);
+    
+    function showWine($wines){
+        $this->smarty->assign('wines', $wines);
         $this->smarty->display('templates/WineDetail.tpl');
     }
-
-    function showCrudWine($wines){
-        $this->smarty->assign('titulo', 'Agregar, borrar o modificar un vino');
-        $this->smarty->assign('wines' , $wines);
-        $this->smarty->display('templates/crudWines.tpl');
-        
-    }
-
-    /*   function showTasks ($tasks){
-        $this->smarty->assign('titulo', 'Lista de tareas');
-        $this->smarty->assign('tasks', $tasks);
-
-        $this->smarty->display('templates/taskList.tpl');
-    } */
-
-    
 
 }

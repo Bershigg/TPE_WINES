@@ -13,14 +13,10 @@
                 <tr>
                     {foreach from=$wines item=$wine}
                         <tr>    
-                            <td> <a href="viewWine/{$wine->id_Wine}">{$wine->NameWine}</a> </td>
+                            <td> <a href="viewWine/{$wine->NameWine}">{$wine->NameWine}</a> </td>
                             <td> {$wine->Style} </td>
                             <td> {$wine->NameStore} </td>
                             <td> {$wine->Price} </td>
-                                 {*   <a class="btn btn-danger" href="deleteTask/{$task->id_tarea}">Borrar</a>
-                                {if !$task->finalizada}
-                                    <a class="btn btn-success" href="updateTask/{$task->id_tarea}">Done</a>
-                                {/if} *}
                         </tr>
                     {/foreach}
                 
