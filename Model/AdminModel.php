@@ -23,4 +23,30 @@ class AdminModel{
         $sentencia->execute(array($namewine, $style, $id_store, $price, $id));
         
     }
+
+    function insertStore($namestore)   {
+        $sentencia = $this->db->prepare("INSERT INTO stores(NameStore) VALUES (?)");
+        $sentencia->execute(array($namestore));
+    }
+
+    function deleteStore($id){
+        $sentencia = $this->db->prepare("DELETE FROM stores WHERE id_store=?");
+        $sentencia->execute(array($id));
+    }
+
+    function updateStore($id, $namestore){
+        $sentencia = $this->db->prepare("UPDATE stores SET NameStore=? WHERE id_store=? ");
+        $sentencia->execute(array($namestore, $id));
+        
+    }
+
+    function getWineUpdate($id)  {
+            $sentencia = $this->db->prepare( "SELECT a.*, b.*
+                                                FROM wines a
+                                                LEFT JOIN stores b
+                                                ON a.id_store = b.id_store where NameWine=?");
+            $sentencia->execute(array($id));
+            $wines = $sentencia->fetch(PDO::FETCH_OBJ);
+            return $wines;
+    }
 }

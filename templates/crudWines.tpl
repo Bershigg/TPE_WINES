@@ -1,8 +1,14 @@
-{include file='templates/header.tpl'}
+{include file='templates/headerAdmin.tpl'}
     
-     <h2> {$titulo}</h2>
+<div class="cabecera">
+    <h2> {$titulo}</h2>    
+</div>
 
-    <div class="container">
+<div class="container">
+    <a href="showCreateWine"class="btn btn-warning">Cargar un vino</a>
+    <a href="adminHome" class="btn btn-success">Administrar vinos/bodegas</a>
+    <a class="btn btn-secondary" href="logout">Log Out</a>
+
     <table class="table table-dark">
         <tr scope="col">
             <th>Nombre</th>
@@ -15,9 +21,9 @@
                 <tr>
                     {foreach from=$wines item=$wine}
                         <tr>    
-                            <td> <a href="viewWine/{$wine->NameWine}">{$wine->NameWine}</a> </td>
-                            <td> {$wine->Style} </td>
-                            <td> {$wine->NameStore} </td>
+                            <td> {$wine->NameWine} </td>
+                            <td> {$wine->Style} </td>                           
+                            <td> {$wine->NameStore} </td>                           
                             <td> {$wine->Price} </td>
                             <td> <a class="btn btn-danger" href="deleteWine/{$wine->id_Wine}">Borrar</a></td>                
                             <td> <a class="btn btn-success" href="goUpdateWine/{$wine->id_Wine}">Modificar</a></td>                                       
@@ -25,21 +31,8 @@
                     {/foreach}
                 
     </table>
-
-    <form action="createWine" method="POST">
-        <input type="text" name="nameWines" id="nameWines" placeholder="Nombre Vino">
-        <input type="text" name="style" id="style" placeholder="Estilo">
-        <select name="id_store">
-            {foreach from=$stores item=$store}
-                <option value="id_store">{$store->NameStore}</option>
-            {/foreach}  
-        </select>
-        <input type="number" name="price" id="price" placeholder="Precio">
-        <input type="submit" class="btn btn-primary" value="Save">
-    </form>
-
-    <a href="showListStore">Listado de bodegas</a>
+        
 </div>
-{include file='templates/footer.tpl'}
+{include file='templates/footerAdmin.tpl'}
 
 

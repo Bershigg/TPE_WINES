@@ -20,8 +20,8 @@ class PublicModel{
     function getStore(){
         $sentencia = $this->db->prepare("SELECT * from stores");
         $sentencia->execute();
-        $store = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        return $store;   
+        $stores = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $stores;   
     }
 
     function storeSelected($id){
@@ -41,8 +41,8 @@ class PublicModel{
                                             LEFT JOIN stores b
                                             ON a.id_store = b.id_store where NameWine=?");
         $sentencia->execute(array($id));
-        $wines = $sentencia->fetch(PDO::FETCH_OBJ);
-        return $wines;
+        $wine = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $wine;
     }
 
   

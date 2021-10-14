@@ -10,6 +10,15 @@ class PublicView{
 
     }
 
+    function start(){
+        $this->smarty->display('templates/start.tpl');
+        
+    }
+
+    function showHome (){
+        $this->smarty->display('templates/home.tpl');
+    }
+
     function showWines ($wines){
         $this->smarty->assign('titulo', 'Lista de Vinos');
         $this->smarty->assign('wines' , $wines);
@@ -27,9 +36,8 @@ class PublicView{
     }
 
     function showWinesForStore($winesForStore){
-        $this->smarty->assign('titulo', 'Lista de vinos de');
+        $this->smarty->assign('titulo', 'Lista de vinos por Bodega');
         $this->smarty->assign('winesForStore' , $winesForStore);
-
         $this->smarty->display('templates/WinesForStore.tpl');
         
     }
@@ -39,8 +47,9 @@ class PublicView{
     }
 
     
-    function showWine($wines){
+    function showWine($wines, $descripcion){
         $this->smarty->assign('wines', $wines);
+        $this->smarty->assign('descripcion', $descripcion);
         $this->smarty->display('templates/WineDetail.tpl');
     }
 

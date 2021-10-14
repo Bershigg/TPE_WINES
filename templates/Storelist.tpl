@@ -1,21 +1,10 @@
 {include file='templates/header.tpl'}
 
-<h1>{$titulo}</h1>
+<h2>{$titulo}</h2>
 
-<div class="container">
-    <table class="table table-dark">
-        <tr scope="col">
-            <th>Nombre</th>            
-        </tr>
-        <tr>
-            {foreach from=$store item=$i}
-                <tr>    
-                    <td> {$i->NameStore} <a href="winesForStore/{$i->NameStore}">ir a vinos de la bodega</a> </td>        
-                </tr> 
-            {/foreach}
-        </tr>
-    </table>
-
-    <a href="home">Listado de vinos</a>
-</div>
+<ul class="list-group">
+    {foreach from=$store item=$i}    
+            <li class="list-group-item"><a href="winesForStore/{$i->NameStore}"> {$i->NameStore} </a> </li>        
+    {/foreach}
+</ul>
 {include file='templates/footer.tpl'}

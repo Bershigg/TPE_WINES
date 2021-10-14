@@ -1,8 +1,7 @@
 {include file='templates/header.tpl'}
 
+<h2>{$titulo}</h2>
 
-
-<h1>{$titulo}</h1>
 <div class="container">
     <table class="table table-dark">
         <tr scope="col">
@@ -14,7 +13,7 @@
                 <tr>
                     {foreach from=$winesForStore item=$wine}
                         <tr>    
-                            <td> <a href="viewWine/{$wine->NameWine}">{$wine->NameWine}</a> </td>
+                            <td> {$wine->NameWine}</td>
                             <td> {$wine->Style} </td>
                             <td> {$wine->NameStore} </td>
                             <td> {$wine->Price} </td>
@@ -23,10 +22,6 @@
                 
     </table>
 
-   
-
-    <a href="showListStore">Listado de bodegas</a>
-    <a href="home">Listado de vinos</a>
-
+    <a href="showListStore" class="btn btn-success">Volver a lista de bodegas</a>
 </div>
 {include file='templates/footer.tpl'}

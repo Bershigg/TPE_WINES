@@ -10,7 +10,3 @@
     <title>Document</title>
 </head>
 <body>
-
-{include file='templates/navbar.tpl'}
-
-
