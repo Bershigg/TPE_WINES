@@ -10,6 +10,14 @@ class LoginView{
         $this->smarty = new Smarty();
     }
 
+    function start(){
+        $this->smarty->display('templates/start.tpl');
+    }
+
+    function showHome (){
+        $this->smarty->display('templates/home.tpl');
+    }
+
     function showLogin($error = ""){
         $this->smarty->assign('titulo', 'Login');
         $this->smarty->assign('error', $error);
@@ -18,6 +26,15 @@ class LoginView{
     }
 
     function showAdminHome(){
-        header("Location: ".BASE_URL."adminHome");
+        $this->smarty->display('templates/adminHome.tpl');
+    }
+
+    function showRegister(){
+        $this->smarty->assign('titulo', 'Register');
+        $this->smarty->display('templates/ShowRegister.tpl');
+    }
+
+    function showHomeLocation(){
+        header("Location: ".BASE_URL."home");
     }
 }

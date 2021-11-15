@@ -1,8 +1,8 @@
 <?php    
-    require_once "./Controller/PublicController.php";
-    require_once "./Controller/AdminController.php";
+    require_once "./Controller/CategoryController.php";
+    require_once "./Controller/ProductController.php";
     require_once "./Controller/LoginController.php";
-    require_once "./Controller/RegisterController.php";
+
 
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
     
@@ -14,15 +14,15 @@
 
     $params = explode('/', $action);
 
-    $PublicController = new   PublicController();
-    $AdminController = new   AdminController();
+    $CategoryController = new   CategoryController();
+    $ProductController = new   ProductController();
     $LoginController = new LoginController();
-    $RegisterController = new RegisterController();
+
 
     // determina que camino seguir según la acción
     switch ($params[0]) {
         case 'start': 
-            $PublicController->start(); // Comenzar
+            $LoginController->start(); // Comenzar
             break;  
         case 'login': 
             $LoginController->login(); // Loguearse
@@ -34,64 +34,64 @@
             $LoginController->logout(); // Desloguearse
             break;  
         case 'adminHome': 
-            $AdminController->adminHome(); // Comenzar
+            $LoginController->adminHome(); // Home de Admin
             break;         
         case 'register': 
-            $RegisterController->register(); // Registrarse
+            $LoginController->register(); // Registrarse
             break;   
         case 'verifyregister': 
-            $RegisterController->verifyregister(); // verificar registro
+            $LoginController->verifyregister(); // verificar registro
             break; 
         case 'home': 
-            $PublicController->showHome(); //Listado de los vinos -- listado de items
+            $LoginController->showHome(); //Listado de los vinos -- listado de items
             break;
         case 'wines': 
-            $PublicController->showWines(); //Listado de los vinos -- listado de items
+            $ProductController->showWines(); //Listado de los vinos -- listado de items
             break;  
         case 'showListStore': 
-            $PublicController->showListStore(); //Muestra la lista de bodegas -- listado de categorias
+            $CategoryController->showListStore(); //Muestra la lista de bodegas -- listado de categorias
             break;  
         case 'winesForStore': 
-            $PublicController->winesForStore($params[1]); // Muestra los vinos de una bodega seleccionada -- listado de item por categoria
+            $CategoryController->winesForStore($params[1]); // Muestra los vinos de una bodega seleccionada -- listado de item por categoria
             break;
         case 'viewWine': 
-            $PublicController->viewWine($params[1]); // Muestra los datos del vino
+            $ProductController->viewWine($params[1]); // Muestra los datos del vino
             break;
         case 'crudWines': 
-            $AdminController->crudWines(); //home de crud de un vino -- lista de items admin
+            $ProductController->crudWines(); //home de crud de un vino -- lista de items admin
             break;
         case 'createWine': 
-            $AdminController->createWine(); //crear un vino -- agrega items admin
+            $ProductController->createWine(); //crear un vino -- agrega items admin
             break;
         case 'deleteWine': 
-            $AdminController->deleteWine($params[1]); //borro un vino -- 
+            $ProductController->deleteWine($params[1]); //borro un vino -- 
             break;
         case 'goUpdateWine': 
-            $AdminController->goUpdateWine($params[1]); //modifico un vino -- 
+            $ProductController->goUpdateWine($params[1]); //modifico un vino -- 
             break;
         case 'updateWine': 
-            $AdminController->updateWine(); //modifico un vino -- 
+            $ProductController->updateWine(); //modifico un vino -- 
             break;
         case 'showCreateWine': 
-            $AdminController->showCreateWine(); //muestra formulario para crear un vino -- 
+            $ProductController->showCreateWine(); //muestra formulario para crear un vino -- 
             break;
         case 'crudStores': 
-            $AdminController->crudStore(); //home de crud de una bodega -- lista de categorias admin
+            $CategoryController->crudStore(); //home de crud de una bodega -- lista de categorias admin
             break;
         case 'showCreateStore': 
-            $AdminController->showCreateStore(); //muestra formulario para crear una bodega --
+            $CategoryController->showCreateStore(); //muestra formulario para crear una bodega --
             break;
         case 'createStore': 
-            $AdminController->createStore(); //crea una bodega--
+            $CategoryController->createStore(); //crea una bodega--
             break;
         case 'deleteStore': 
-            $AdminController->deleteStore($params[1]); //borra una bodega--
+            $CategoryController->deleteStore($params[1]); //borra una bodega--
             break;
         case 'goUpdateStore': 
-            $AdminController->goUpdateStore($params[1]); //modificar una bodega--
+            $CategoryController->goUpdateStore($params[1]); //modificar una bodega--
             break;
         case 'updateStore': 
-            $AdminController->updateStore(); //modificar una bodega--
+            $CategoryController->updateStore(); //modificar una bodega--
             break;
     default: 
             echo('404 Page not found'); 

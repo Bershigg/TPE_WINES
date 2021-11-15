@@ -13,4 +13,9 @@ class UserModel{
         $query->execute([$username]);
         return $query->fetch(PDO::FETCH_OBJ);
     }
+    
+    function insertRegister($username, $password){
+        $sentencia = $this->db->prepare("INSERT INTO users (NameUser, Password) VALUES (?, ?)");
+        $sentencia->execute(array($username, $password));
+    }
 }
