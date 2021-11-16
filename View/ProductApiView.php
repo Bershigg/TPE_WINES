@@ -1,6 +1,6 @@
 <?php
 
-    class APIView {
+    class ProductApiView {
 
         public function response($data, $status) {
             header("Content-Type: application/json");
@@ -16,4 +16,6 @@
               );
               return (isset($status[$code]))? $status[$code] : $status[500];
         }
-}
+
+
+    }

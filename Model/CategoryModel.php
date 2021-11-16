@@ -7,14 +7,14 @@ class CategoryModel{
         $this-> db = new PDO('mysql:host=localhost;'.'dbname=db_wine;charset=utf8', 'root', ''); 
     }
     
-    function getStore(){
+    function getStores(){
         $sentencia = $this->db->prepare("SELECT * from stores");
         $sentencia->execute();
         $stores = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $stores;   
     }
 
-    function storeSelected($id){
+    function getStore($id){
         $sentencia = $this->db->prepare( "SELECT a.*, b.*
                                             FROM wines a
                                             LEFT JOIN stores b
