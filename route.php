@@ -32,9 +32,6 @@
             break;    
         case 'logout': 
             $LoginController->logout(); // Desloguearse
-            break;  
-        case 'adminHome': 
-            $LoginController->adminHome(); // Home de Admin
             break;         
         case 'register': 
             $LoginController->register(); // Registrarse
@@ -57,9 +54,6 @@
         case 'viewWine': 
             $ProductController->viewWine($params[1]); // Muestra los datos del vino
             break;
-        case 'crudWines': 
-            $ProductController->crudWines(); //home de crud de un vino -- lista de items admin
-            break;
         case 'createWine': 
             $ProductController->createWine(); //crear un vino -- agrega items admin
             break;
@@ -76,7 +70,7 @@
             $ProductController->showCreateWine(); //muestra formulario para crear un vino -- 
             break;
         case 'crudStores': 
-            $CategoryController->crudStore(); //home de crud de una bodega -- lista de categorias admin
+            $CategoryController->crudStore($params[1]); //home de crud de una bodega -- lista de categorias admin
             break;
         case 'showCreateStore': 
             $CategoryController->showCreateStore(); //muestra formulario para crear una bodega --

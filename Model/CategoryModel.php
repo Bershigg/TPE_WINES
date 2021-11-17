@@ -40,7 +40,11 @@ class CategoryModel{
         $sentencia->execute(array($namestore, $id));
         
     }
+
+
   
+
+   
 }
 
 

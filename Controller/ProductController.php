@@ -45,14 +45,14 @@ class ProductController{
     function goUpdateWine($id){ 
         $this->AuthHelper->checkLoggedIn();
         $vino = $this->modelProduct->getWine($id); 
-        $stores = $this->modelCategory->getStore();
+        $stores = $this->modelCategory->getStores();
         $this->view->showGoUpdate($id, $vino, $stores);
     }
 
     function showCreateWine(){
         $this->AuthHelper->checkLoggedIn();
         $wines = $this->modelProduct->getWines(); 
-        $stores = $this->modelCategory->getStore(); 
+        $stores = $this->modelCategory->getStores(); 
         $this->view->showCreateWine($wines, $stores);
     }
 
@@ -72,4 +72,7 @@ class ProductController{
         }
         $this->view->showWine($vino, $descripcion);
     }
+
+    
 }
+

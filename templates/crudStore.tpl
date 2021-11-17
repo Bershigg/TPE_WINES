@@ -1,7 +1,10 @@
 {include file='templates/headerAdmin.tpl'}
     
-     <h2> {$titulo}</h2>
-
+    <h2> {$titulo}</h2>
+    {if $message}
+        <h2> {$message}</h2>
+    {/if}
+    
 <div class="container">
     <a href="showCreateStore" class="btn btn-warning">Cargar una bodega</a>
     <a href="adminHome" class="btn btn-success">administrar vinos/bodegas</a>

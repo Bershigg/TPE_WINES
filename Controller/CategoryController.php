@@ -16,26 +16,26 @@ class CategoryController{
     }
 
     function showListStore(){
-        $store = $this->model->getStore();
-        $this->view->showStore($store);
+        $stores = $this->model->getStores();
+        $this->view->showStore($stores);
              
     }
 
     function winesForStore($id){
-        $vinosporbodega = $this->model->storeSelected($id);
+        $vinosporbodega = $this->model->getStore($id);
         $this->view->showWinesForStore($vinosporbodega);
         
     }   
 
-    function crudStore(){
+    function crudStore($message = null){
         $this->AuthHelper->checkLoggedIn();
-        $stores = $this->model->getStore();
-        $this->view->showCrudStore($stores); 
+        $stores = $this->model->getStores();
+        $this->view->showCrudStore($stores, $message); 
     }
 
     function showCreateStore(){
         $this->AuthHelper->checkLoggedIn();
-        $stores = $this->model->getStore();
+        $stores = $this->model->getStores();
         $this->view->showCreateStore($stores);
     }
 
@@ -47,8 +47,13 @@ class CategoryController{
 
     function deleteStore($id){
         $this->AuthHelper->checkLoggedIn();
-        $this->model->deleteStore($id);
-        $this->view->showCrudStoreLocation();
+        try {
+            $this->model->deleteStore($id);
+            $this->view->showCrudStoreLocation();
+        } catch (Exception $e) {
+            $message = "No se puede borrar la bodega porque posee vinos asocioados";
+            $this->view->showCrudStoreLocation($message);
+        }
     }
 
     function goUpdateStore($id){

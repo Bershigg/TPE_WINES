@@ -11,8 +11,11 @@
         <a class="nav-link" href="showListStore">Nuestras bodegas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login">Administador</a>
+        <a class="nav-link" href="login">Ingresar</a>
       </li>    
+      <li class="nav-item">
+        <a class="nav-link" href="register">Registrarse</a>
+      </li>
     </ul>
   </div>
 </nav>

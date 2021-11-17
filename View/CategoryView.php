@@ -29,8 +29,9 @@ class CategoryView{
         header("Location: ".BASE_URL."home");
     }
 
-    function showCrudStore($stores){
+    function showCrudStore($stores, $message = null){
         $this->smarty->assign('titulo', 'Agregar, borrar o modificar una bodega');
+        $this->smarty->assign('message', $message);
         $this->smarty->assign('stores' , $stores);
         $this->smarty->display('templates/crudStore.tpl');
         
@@ -42,8 +43,9 @@ class CategoryView{
         $this->smarty->display('templates/showCreateStore.tpl');
     }
     
-    function showCrudStoreLocation(){
-        header("Location: ".BASE_URL."crudStores");
+    function showCrudStoreLocation($message = null){
+        header("Location: ".BASE_URL."crudStores/".$message);
+       
     }
 
     function showGoUpdateStore($id){

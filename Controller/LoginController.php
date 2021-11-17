@@ -70,7 +70,7 @@ class LoginController {
             $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
             $this->model->insertRegister($username, $password);
         }
-    $this->view->showHomeLocation();
+    $this->view->showAdminHome();
     }
 
 }

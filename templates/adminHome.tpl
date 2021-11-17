@@ -10,7 +10,7 @@
 
     <section class="sectionadmin">
         <img src="images\adminbodega.jpg" class="img-admin" alt="">
-        <a href="crudStores">Administrar bodegas</a>
+        <a href="crudStores/">Administrar bodegas</a>
     </section>
 
 </div>
