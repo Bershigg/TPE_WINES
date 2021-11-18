@@ -6,11 +6,13 @@ require_once "./Helpers/AuthHelper.php";
 
 class ProductController{
 
+    private $modelUser;
     private $modelProduct;
     private $view;
     private $AuthHelper;
 
     function __construct(){
+        $this->modelUser = new UserModel();
         $this->modelProduct = new ProductModel();
         $this->modelCategory = new CategoryModel();
         $this->view = new ProductView();
@@ -19,8 +21,9 @@ class ProductController{
 
     function crudWines(){
         $this->AuthHelper->checkLoggedIn();
+        $user = $this->modelUser->getUsers();
         $wines = $this->modelProduct->getWines();
-        $this->view->showCrudWine($wines); 
+        $this->view->showCrudWine($wines,$user->condition); 
     }
 
     function createWine(){

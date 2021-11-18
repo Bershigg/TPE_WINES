@@ -10,13 +10,14 @@ class UserModel{
     
     function getUser($username){
         $query = $this->db->prepare('SELECT * FROM users WHERE NameUser = ?');
-        $query->execute([$username]);
-        return $query->fetch(PDO::FETCH_OBJ);
+        $query->execute(array($username)); 
+        $user = $query->fetch(PDO::FETCH_OBJ);
+        return $user;    
     }
-    
-    function insertRegister($username, $password){
-        $sentencia = $this->db->prepare("INSERT INTO users (NameUser, Password) VALUES (?, ?)");
-        $sentencia->execute(array($username, $password));
+
+    function insertRegister($username, $password, $admin){
+        $sentencia = $this->db->prepare("INSERT INTO users (NameUser, Password, admin ) VALUES (?, ?, ?)");
+        $sentencia->execute(array($username, $password, $admin));
     }
 
     function getUsers(){
