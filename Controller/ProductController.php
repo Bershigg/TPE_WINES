@@ -56,8 +56,9 @@ class ProductController{
     }
 
     function showWines() {
+
         $wines = $this->modelProduct->getWines();
-        $this->view->showWines($wines);
+        $this->view->showWines($wines);   
     }
 
     function viewWine($id){
@@ -71,7 +72,4 @@ class ProductController{
         }
         $this->view->showWine($vino, $descripcion);
     }
-
-    
 }
-
