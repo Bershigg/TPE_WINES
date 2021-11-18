@@ -93,6 +93,16 @@
         case 'updateStore': 
             $CategoryController->updateStore(); //modificar una bodega--
             break;
+        case 'adminUser': 
+            $LoginController->adminUser(); //modificar una bodega--
+            break;     
+        case 'borrarUser': 
+            $LoginController->deleteUser($params[1]); //borro un vino -- 
+            break;
+        case 'cambiarCondicion': 
+            $LoginController->cambiarCondicion($params[1]); //borro un vino -- 
+            break;
+
     default: 
             echo('404 Page not found'); 
             break;

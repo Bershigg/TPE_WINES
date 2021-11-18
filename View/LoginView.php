@@ -37,4 +37,14 @@ class LoginView{
     function showHomeLocation(){
         header("Location: ".BASE_URL."home");
     }
+
+    function showUsers ($usuarios){
+        $this->smarty->assign('titulo', 'Lista de Usuarios');
+        $this->smarty->assign('usuarios' , $usuarios);
+        $this->smarty->display('templates/UsersList.tpl');
+    }
+
+    function showUserLocation(){
+        header("Location: ".BASE_URL."adminUser");
+    }
 }

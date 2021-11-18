@@ -73,4 +73,22 @@ class LoginController {
     $this->view->showAdminHome();
     }
 
+    function adminUser(){
+        $this->AuthHelper->checkLoggedIn();
+        $usuarios = $this->model->getUsers();
+        $this->view->showUsers($usuarios);
+    }
+
+    function deleteUser($id){
+        $this->AuthHelper->checkLoggedIn();
+        $this->model->deleteUser($id);
+        $this->view->showUserLocation();
+    }
+
+    function CambiarCondicion($id){
+        $this->AuthHelper->checkLoggedIn();
+        $this->model->updateUser($id);
+        $this->view->showUserLocation();
+    }
+
 }
