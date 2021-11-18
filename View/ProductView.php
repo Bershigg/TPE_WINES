@@ -10,9 +10,10 @@ class ProductView{
 
     }
 
-    function showCrudWine($wines){
+    function showCrudWine($wines, $condition){
         $this->smarty->assign('titulo', 'Listado de vinos');
         $this->smarty->assign('wines' , $wines);
+        $this->smarty->assign('user' , $condition);
         $this->smarty->display('templates/crudWines.tpl');
         
     }
@@ -44,9 +45,7 @@ class ProductView{
     function showWines ($wines){
         $this->smarty->assign('titulo', 'Lista de Vinos');
         $this->smarty->assign('wines' , $wines);
-
-        $this->smarty->display('templates/Winelist.tpl');
-        
+        $this->smarty->display('templates/Winelist.tpl');    
     }
 
     function showWine($wines, $descripcion){
