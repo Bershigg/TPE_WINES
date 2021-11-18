@@ -30,6 +30,9 @@
         case 'verify': 
             $LoginController->verifylogin(); // verificar logueo
             break;    
+        case 'adminHome': 
+            $LoginController->adminHome(); //home de crud de una bodega -- lista de categorias admin
+            break;
         case 'logout': 
             $LoginController->logout(); // Desloguearse
             break;         
@@ -68,6 +71,9 @@
             break;
         case 'showCreateWine': 
             $ProductController->showCreateWine(); //muestra formulario para crear un vino -- 
+            break;
+        case 'crudWines': 
+            $ProductController->crudWines(); //home de crud de una bodega -- lista de categorias admin
             break;
         case 'crudStores': 
             $CategoryController->crudStore($params[1]); //home de crud de una bodega -- lista de categorias admin

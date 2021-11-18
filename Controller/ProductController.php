@@ -18,7 +18,6 @@ class ProductController{
     }
 
     function crudWines(){
-
         $this->AuthHelper->checkLoggedIn();
         $wines = $this->modelProduct->getWines();
         $this->view->showCrudWine($wines); 
