@@ -68,13 +68,15 @@ class LoginController {
         if(!empty($_POST['name']) && !empty($_POST['password'])){
             $username = $_POST['name'];
             $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-            $this->model->insertRegister($username, $password);
+            $admin = $_POST['admin'];
+            $this->model->insertRegister($username, $password, $admin);
         }
     $this->view->showAdminHome();
     }
 
     function adminUser(){
         $this->AuthHelper->checkLoggedIn();
+        $user = $this->model->getUser($_SESSION);
         $usuarios = $this->model->getUsers();
         $this->view->showUsers($usuarios);
     }
