@@ -2,7 +2,6 @@
 
 
 
-
     <h2>{$titulo}</h2>
 
     <div class="container">
