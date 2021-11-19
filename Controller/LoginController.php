@@ -76,7 +76,7 @@ class LoginController {
 
     function adminUser(){
         $this->AuthHelper->checkLoggedIn();
-        $user = $this->model->getUser($_SESSION);
+        $user = $this->model->getUser($_SESSION["name"]);
         $usuarios = $this->model->getUsers();
         $this->view->showUsers($usuarios);
     }

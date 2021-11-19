@@ -11,7 +11,7 @@ class UserModel{
     function getUser($username){
         $query = $this->db->prepare('SELECT * FROM users WHERE NameUser = ?');
         $query->execute(array($username)); 
-        $user = $query->fetch(PDO::FETCH_OBJ);
+        $user = $query->fetchAll(PDO::FETCH_OBJ);
         return $user;    
     }
 
