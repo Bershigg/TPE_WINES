@@ -48,8 +48,8 @@
         case 'wines': 
             $ProductController->showWines(); //Listado de los vinos -- listado de items
             break;  
-        case 'showListStore': 
-            $CategoryController->showListStore(); //Muestra la lista de bodegas -- listado de categorias
+        case 'ListStore': 
+            $CategoryController->ListStore(); //Muestra la lista de bodegas -- listado de categorias
             break;  
         case 'winesForStore': 
             $CategoryController->winesForStore($params[1]); // Muestra los vinos de una bodega seleccionada -- listado de item por categoria
@@ -71,12 +71,6 @@
             break;
         case 'showCreateWine': 
             $ProductController->showCreateWine(); //muestra formulario para crear un vino -- 
-            break;
-        case 'crudWines': 
-            $ProductController->crudWines(); //home de crud de una bodega -- lista de categorias admin
-            break;
-        case 'crudStores': 
-            $CategoryController->crudStore($params[1]); //home de crud de una bodega -- lista de categorias admin
             break;
         case 'showCreateStore': 
             $CategoryController->showCreateStore(); //muestra formulario para crear una bodega --

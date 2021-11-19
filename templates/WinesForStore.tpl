@@ -22,6 +22,6 @@
                 
     </table>
 
-    <a href="showListStore" class="btn btn-success">Volver a lista de bodegas</a>
+    <a href="ListStore" class="btn btn-success">Volver a lista de bodegas</a>
 </div>
 {include file='templates/footer.tpl'}

@@ -15,13 +15,21 @@ class UserModel{
         return $user;    
     }
 
+    function isAdmin($username){
+        $query = $this->db->prepare('SELECT admin FROM users WHERE NameUser = ?');
+        $query->execute(array($username)); 
+        $admin = $query->fetchColumn();
+        return $admin == "1";    
+    }
+
+
     function insertRegister($username, $password, $admin){
         $sentencia = $this->db->prepare("INSERT INTO users (NameUser, Password, admin ) VALUES (?, ?, ?)");
         $sentencia->execute(array($username, $password, $admin));
     }
 
     function getUsers(){
-        $sentencia = $this->db->prepare('SELECT * FROM users');
+        $sentencia = $this->db->prepare('SELECT * FROM users WHERE NameUser != "bernardo"');
         $sentencia->execute();
         $usuarios = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $usuarios;

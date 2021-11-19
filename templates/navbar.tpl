@@ -8,7 +8,7 @@
         <a class="nav-link" href="wines">Nuestros Vinos <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="showListStore">Nuestras bodegas</a>
+        <a class="nav-link" href="ListStore">Nuestras bodegas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="login">Ingresar</a>

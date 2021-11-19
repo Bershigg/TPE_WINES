@@ -1,23 +1,28 @@
 <?php
 require_once "./Model/CategoryModel.php";
+require_once "./Model/UserModel.php";
 require_once "./View/CategoryView.php";
 require_once "./Helpers/AuthHelper.php";
 
 class CategoryController{
 
+    private $modelUser;
     private $model;
     private $view;
     private $AuthHelper;
 
     function __construct(){
+        $this->modelUser = new UserModel();
         $this->model = new CategoryModel();
         $this->view = new CategoryView();
         $this->AuthHelper = new AuthHelper();
     }
 
-    function showListStore(){
+    function ListStore(){
+        $this->AuthHelper->checkLoggedIn();
+        $admin = $this->modelUser->IsAdmin($_SESSION["name"]);
         $stores = $this->model->getStores();
-        $this->view->showStore($stores);
+        $this->view->showStore($stores, $admin); 
              
     }
 
@@ -26,12 +31,6 @@ class CategoryController{
         $this->view->showWinesForStore($vinosporbodega);
         
     }   
-
-    function crudStore($message = null){
-        $this->AuthHelper->checkLoggedIn();
-        $stores = $this->model->getStores();
-        $this->view->showCrudStore($stores, $message); 
-    }
 
     function showCreateStore(){
         $this->AuthHelper->checkLoggedIn();
@@ -51,7 +50,7 @@ class CategoryController{
             $this->model->deleteStore($id);
             $this->view->showCrudStoreLocation();
         } catch (Exception $e) {
-            $message = "No se puede borrar la bodega porque posee vinos asocioados";
+            $message = "No se puede borrar la bodega porque posee vinos asociados";
             $this->view->showCrudStoreLocation($message);
         }
     }

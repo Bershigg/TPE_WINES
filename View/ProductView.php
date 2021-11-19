@@ -10,10 +10,9 @@ class ProductView{
 
     }
 
-    function showCrudWine($wines, $condition){
+    function showCrudWine($wines){
         $this->smarty->assign('titulo', 'Listado de vinos');
         $this->smarty->assign('wines' , $wines);
-        $this->smarty->assign('user' , $condition);
         $this->smarty->display('templates/crudWines.tpl');
         
     }
@@ -42,9 +41,11 @@ class ProductView{
         header("Location: ".BASE_URL."login");
     }
 
-    function showWines ($wines){
+    function showWines($wines, $admin){
         $this->smarty->assign('titulo', 'Lista de Vinos');
         $this->smarty->assign('wines' , $wines);
+        //$admin = $admin->admin == "1";
+        $this->smarty->assign('admin' , $admin);
         $this->smarty->display('templates/Winelist.tpl');    
     }
 

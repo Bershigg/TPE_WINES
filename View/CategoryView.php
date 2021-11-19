@@ -10,10 +10,11 @@ class CategoryView{
 
     }
 
-    function showStore ($store){
-        $this->smarty->assign('titulo', 'Lista de Bodegas');
-        $this->smarty->assign('store' , $store);
-
+    function showStore ($stores, $admin){
+        $this->smarty->assign('tituloAdmin', 'Agregar, borrar o modificar una bodega');
+        $this->smarty->assign('tituloUser', 'Listado de bodegas');
+        $this->smarty->assign('stores' , $stores);
+        $this->smarty->assign('admin' , $admin);
         $this->smarty->display('templates/Storelist.tpl');
         
     }
@@ -29,22 +30,14 @@ class CategoryView{
         header("Location: ".BASE_URL."home");
     }
 
-    function showCrudStore($stores, $message = null){
-        $this->smarty->assign('titulo', 'Agregar, borrar o modificar una bodega');
-        $this->smarty->assign('message', $message);
-        $this->smarty->assign('stores' , $stores);
-        $this->smarty->display('templates/crudStore.tpl');
-        
-    }
-
     function showCreateStore($stores){
         $this->smarty->assign('titulo', 'Cargar una bodega');
         $this->smarty->assign('stores' , $stores);
         $this->smarty->display('templates/showCreateStore.tpl');
     }
     
-    function showCrudStoreLocation($message = null){
-        header("Location: ".BASE_URL."crudStores/".$message);
+    function showCrudStoreLocation(){
+        header("Location: ".BASE_URL."ListStore");
        
     }
 

@@ -1,6 +1,7 @@
 <?php
 require_once "./Model/ProductModel.php";
 require_once "./Model/CategoryModel.php";
+require_once "./Model/UserModel.php";
 require_once "./View/ProductView.php";
 require_once "./Helpers/AuthHelper.php";
 
@@ -8,6 +9,7 @@ class ProductController{
 
     private $modelUser;
     private $modelProduct;
+    private $modelCategory;
     private $view;
     private $AuthHelper;
 
@@ -17,13 +19,6 @@ class ProductController{
         $this->modelCategory = new CategoryModel();
         $this->view = new ProductView();
         $this->AuthHelper = new AuthHelper();
-    }
-
-    function crudWines(){
-        $this->AuthHelper->checkLoggedIn();
-        $user = $this->modelUser->getUsers();
-        $wines = $this->modelProduct->getWines();
-        $this->view->showCrudWine($wines,$user->condition); 
     }
 
     function createWine(){
@@ -59,9 +54,10 @@ class ProductController{
     }
 
     function showWines() {
-
+        $this->AuthHelper->checkLoggedIn();
+        $admin = $this->modelUser->isAdmin($_SESSION["name"]);
         $wines = $this->modelProduct->getWines();
-        $this->view->showWines($wines);   
+        $this->view->showWines($wines, $admin);
     }
 
     function viewWine($id){

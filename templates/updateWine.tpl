@@ -1,4 +1,4 @@
-{include file='templates/headerAdmin.tpl'}
+{include file='templates/header.tpl'}
    
    <h2> {$titulo}</h2>
 

@@ -1,4 +1,4 @@
-{include file='templates/headerAdmin.tpl'}
+{include file='templates/header.tpl'}
 
 <h2>{$titulo}</h2>
 
@@ -7,4 +7,4 @@
         <input type="submit" class="btn btn-primary" value="Save">
 </form>
 
-{include file='templates/footerAdmin.tpl'}
+{include file='templates/footer.tpl'}

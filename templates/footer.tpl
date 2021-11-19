@@ -1,13 +1,14 @@
+
 <footer>
   
   <div class="primer-footer">
     
-    <section class="mb-4">
+    <section>
      
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #3b5998;"
-        href="#!"
+        href="home"
         role="button"
         ><i class="fab fa-facebook-f">Nosotros</i
       ></a>
@@ -25,7 +26,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #dd4b39;"
-        href="showListStore"
+        href="ListStore"
         role="button"
         ><i class="fab fa-google">Bodegas</i
       ></a>
@@ -48,6 +49,13 @@
         ><i class="fab fa-linkedin-in">Contacto</i
       ></a>
     
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #333333;"
+        href="logout"
+        role="button"
+        ><i class="fab fa-github">Loguot</i
+      ></a>
     </section>
     
   </div>
@@ -55,8 +63,8 @@
 
   
   <div class="segundo-footer">
-    <p>© 2021 Copyright: </p>
-    <a class="text-white" href="https://mdbootstrap.com/">www.dipsomania.com</a>
+    <p>© 2021 Copyright:  </p>
+    <a class="text-white" href="https://mdbootstrap.com/"> www.dipsomania.com</a>
   </div>
  
 </footer>

@@ -45,7 +45,10 @@ class LoginController {
 
                 session_start();
                 $_SESSION["name"] = $username;
-                $this->view->showAdminHome();
+                
+                $admin = $this->model->IsAdmin($_SESSION["name"]);
+                $this->view->showAdminHome($admin);    
+
             }
             else{
                 $this->view->showLogin("Acceso Denegado");
@@ -57,7 +60,8 @@ class LoginController {
 
     function adminHome(){
         $this->AuthHelper->checkLoggedIn();
-        $this->view->showAdminHome();
+        $admin = $this->model->IsAdmin($_SESSION["name"]);
+        $this->view->showAdminHome($admin);
     }
 
     function register(){
@@ -71,14 +75,13 @@ class LoginController {
             $admin = $_POST['admin'];
             $this->model->insertRegister($username, $password, $admin);
         }
-    $this->view->showAdminHome();
     }
 
     function adminUser(){
         $this->AuthHelper->checkLoggedIn();
-        $user = $this->model->getUser($_SESSION);
+        $admin = $this->model->IsAdmin($_SESSION["name"]);
         $usuarios = $this->model->getUsers();
-        $this->view->showUsers($usuarios);
+        $this->view->showUsers($usuarios, $admin);
     }
 
     function deleteUser($id){

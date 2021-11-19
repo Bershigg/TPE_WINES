@@ -11,5 +11,4 @@ class AuthHelper{
             header("Location: ".BASE_URL."login");
         }
     }
-
 }

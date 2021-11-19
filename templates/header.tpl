@@ -11,6 +11,6 @@
 </head>
 <body>
 
-{include file='templates/navbar.tpl'}
 
+{include file='templates/navbar.tpl'}
 
