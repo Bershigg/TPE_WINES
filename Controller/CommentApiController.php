@@ -2,12 +2,11 @@
 
 require_once "./Model/ProductModel.php";
 require_once "./Model/CommentModel.php";
-require_once "./View/CommentApiView.php";
-require_once "./View/ApiView.php";
+require_once "./View/APIView.php";
 
 
 
-class ProductApiController {
+class CommentApiController {
 
     private $modelProduct;
     private $modelComment;
@@ -22,6 +21,7 @@ class ProductApiController {
     }
 
     function getComments(){
+        $id_wine = $this->modelProduct->geWine($_GET["id_Wine"]);
         $comments = $this->modelComment->getComments();
         return $this->view->response($comments, 200);
     }
@@ -30,7 +30,7 @@ class ProductApiController {
         $idComment = $params[':ID'];
         $Comment = $this->modelComment->GetComment($idComment);
 
-        if (!empty($Comment)) // verifica si la tarea existe
+        if (!empty($Comment)) // verifica si el comentario existe
             $this->view->response($Comment, 200);
         else
             $this->view->response("El comentario con el id=$idComment no existe", 404);
@@ -54,7 +54,7 @@ class ProductApiController {
 
         // TODO: VALIDACIONES -> 400 (Bad Request)
 
-        $idComment = $this->modelComment->insertComment($body->estrellas); //se carga desde form por eso va $body->Nombre (como esta en el input del form)?
+        $idComment = $this->modelComment->insertComment($body->content, $body->qualification); //se carga desde form por eso va $body->Nombre (como esta en el input del form)?
         if ($idComment != 0) {
             $this->view->response("El Comentario se insertó con el id=$idComment", 200);
         } else {

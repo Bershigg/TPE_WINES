@@ -53,4 +53,5 @@ class ProductModel{
         $wine = $sentencia->fetch(PDO::FETCH_OBJ);
         return $wine;
     }
+
 }

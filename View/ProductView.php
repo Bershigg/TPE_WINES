@@ -16,9 +16,12 @@ class ProductView{
         $this->smarty->display('templates/crudWines.tpl');
         
     }
+    function showComments(){
+        header("Location: ".BASE_URL."viewWine");
+    }
 
     function showCrudLocation(){
-        header("Location: ".BASE_URL."crudWines");
+        header("Location: ".BASE_URL."wines");
     }
 
     function showGoUpdate($id, $vino, $stores){
@@ -44,14 +47,14 @@ class ProductView{
     function showWines($wines, $admin){
         $this->smarty->assign('titulo', 'Lista de Vinos');
         $this->smarty->assign('wines' , $wines);
-        //$admin = $admin->admin == "1";
         $this->smarty->assign('admin' , $admin);
         $this->smarty->display('templates/Winelist.tpl');    
     }
 
-    function showWine($wines, $descripcion){
-        $this->smarty->assign('wines', $wines);
+    function showWine($wine, $descripcion, $user){
+        $this->smarty->assign('wine', $wine);
         $this->smarty->assign('descripcion', $descripcion);
+        $this->smarty->assign('user', $user);
         $this->smarty->display('templates/WineDetail.tpl');
     }
 }
