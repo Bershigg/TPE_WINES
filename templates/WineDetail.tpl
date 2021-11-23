@@ -27,4 +27,11 @@
 </form>
 
 
+<h2>Lista de comentarios</h2>
+
+
+<ul id="list-comments">
+</ul>
+
+<script src="./js/app.js"></script>
 {include file='templates/footer.tpl'}

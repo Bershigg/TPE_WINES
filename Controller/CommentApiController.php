@@ -48,13 +48,13 @@ class CommentApiController {
         }
     }
 
-    function createComment($params = null) {    // no entiendo por que el paramtro si estamos creando un vino nuevo.
+    function createComment() {   
         // obtengo el body del request (json)
         $body = $this->getBody();
 
         // TODO: VALIDACIONES -> 400 (Bad Request)
 
-        $idComment = $this->modelComment->insertComment($body->content, $body->qualification); //se carga desde form por eso va $body->Nombre (como esta en el input del form)?
+        $idComment = $this->modelComment->insertComment($body->content, $body->qualification); 
         if ($idComment != 0) {
             $this->view->response("El Comentario se insertó con el id=$idComment", 200);
         } else {

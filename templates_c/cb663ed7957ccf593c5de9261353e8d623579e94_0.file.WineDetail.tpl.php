@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-21 21:01:13
+/* Smarty version 3.1.39, created on 2021-11-23 13:46:37
   from 'C:\xampp\htdocs\TPE_WINES\templates\WineDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619aa589693e85_54760362',
+  'unifunc' => 'content_619ce2ad4b80f2_14158041',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb663ed7957ccf593c5de9261353e8d623579e94' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_WINES\\templates\\WineDetail.tpl',
-      1 => 1637524855,
+      1 => 1637671593,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_619aa589693e85_54760362 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ce2ad4b80f2_14158041 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -59,6 +59,15 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 </form>
 
 
+<h2>Lista de comentarios</h2>
+
+
+<ul id="list-comments">
+</ul>
+
+<?php echo '<script'; ?>
+ src="./js/app.js"><?php echo '</script'; ?>
+>
 <?php $_smarty_tpl->_subTemplateRender('file:templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }
 }
