@@ -116,12 +116,6 @@ ALTER TABLE `wines`
 --
 
 --
--- AUTO_INCREMENT de la tabla `stores`
---
-ALTER TABLE `stores`
-  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT de la tabla `wines`
 --
 ALTER TABLE `wines`
@@ -130,6 +124,13 @@ ALTER TABLE `wines`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_Wine`) REFERENCES `wines` (`id_Wine`),
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 
 --
 -- Filtros para la tabla `wines`

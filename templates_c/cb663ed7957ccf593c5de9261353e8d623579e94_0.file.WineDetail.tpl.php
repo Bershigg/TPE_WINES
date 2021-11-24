@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 03:17:47
+/* Smarty version 3.1.39, created on 2021-11-24 16:11:41
   from 'C:\xampp\htdocs\TPE_WINES\templates\WineDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619da0cb1376b5_98742174',
+  'unifunc' => 'content_619e562db38273_51116253',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb663ed7957ccf593c5de9261353e8d623579e94' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_WINES\\templates\\WineDetail.tpl',
-      1 => 1637720242,
+      1 => 1637766654,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_619da0cb1376b5_98742174 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619e562db38273_51116253 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -59,6 +59,10 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 
 
 <h2>Lista de comentarios</h2>
+
+<button class="comentarios" data-id="<?php echo $_smarty_tpl->tpl_vars['wine']->value->id_Wine;?>
+" data-rol="<?php echo $_smarty_tpl->tpl_vars['user']->value->admin;?>
+">mostrar comentarios</button>
 
 <table id="table-dark">
             <thead>

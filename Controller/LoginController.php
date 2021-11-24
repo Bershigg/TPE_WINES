@@ -74,6 +74,7 @@ class LoginController {
             $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
             $admin = $_POST['admin'];
             $this->model->insertRegister($username, $password, $admin);
+            $this->view->showAdminHome($admin);
         }
     }
 

@@ -28,6 +28,8 @@
 
 <h2>Lista de comentarios</h2>
 
+<button class="comentarios" data-id="{$wine->id_Wine}" data-rol="{$user->admin}">mostrar comentarios</button>
+
 <table id="table-dark">
             <thead>
                 <tr class="table-dark">
