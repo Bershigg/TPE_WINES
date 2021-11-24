@@ -48,7 +48,7 @@ class ProductModel{
         $sentencia = $this->db->prepare( "SELECT a.*, b.*
                                             FROM wines a
                                             LEFT JOIN stores b
-                                            ON a.id_store = b.id_store where NameWine=?");
+                                            ON a.id_store = b.id_store where id_Wine=?");
         $sentencia->execute(array($id));
         $wine = $sentencia->fetch(PDO::FETCH_OBJ);
         return $wine;

@@ -11,17 +11,17 @@ class CommentApiController {
     private $modelProduct;
     private $modelComment;
     private $view;
-    private $AuthHelper;
+   
 
     function __construct(){
         $this->modelProduct = new ProductModel();
         $this->modelComment = new CommentModel();
-        $this->view = new ProductApiView();
-        $this->AuthHelper = new AuthHelper();
+        $this->view = new ApiView();
+      
     }
 
     function getComments(){
-        $id_wine = $this->modelProduct->geWine($_GET["id_Wine"]);
+        $id_wine = $this->modelProduct->getWine($_GET["id_Wine"]);
         $comments = $this->modelComment->getComments();
         return $this->view->response($comments, 200);
     }
@@ -54,25 +54,19 @@ class CommentApiController {
 
         // TODO: VALIDACIONES -> 400 (Bad Request)
 
-        $idComment = $this->modelComment->insertComment($body->content, $body->qualification); 
+        $idComment = $this->modelComment->insertComment($body->content, $body->qualification, $body->id_user, $body->id_Wine); 
         if ($idComment != 0) {
             $this->view->response("El Comentario se insertó con el id=$idComment", 200);
         } else {
             $this->view->response("El comentario no se pudo insertar", 500);
         }
     }
+
+    
      // Devuelve el body del request
    
     private function getBody() {
         $bodyString = file_get_contents("php://input");
         return json_decode($bodyString);
     }
-
-
-
-
-
-
-
-
 }

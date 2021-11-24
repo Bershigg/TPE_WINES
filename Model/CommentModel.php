@@ -8,8 +8,10 @@ class CommentModel{
     }
 
     function getComments(){ 
-        $sentencia = $this->db->prepare( "SELECT *
-                                            FROM comments");
+        $sentencia = $this->db->prepare( "SELECT comments.*, 
+                                        users.NameUser as User
+                                        FROM comments JOIN users 
+                                        ON comments.id_user = users.id_user");
         $sentencia->execute();
         $comments = $sentencia->fetchAll(PDO::FETCH_OBJ);
         return $comments;
@@ -31,8 +33,7 @@ class CommentModel{
 
     function insertComment($content, $qualification, $id_user, $id_Wine){ 
         $sentencia = $this->db->prepare("INSERT INTO comments (content, qualification, id_user, id_Wine) VALUES (?, ?, ?, ?)");
-        $sentencia->execute(array($content, $qualification, $id_user, $id_Wine));
-    }
-
-  
+        $sentencia->execute(array($content, $qualification, $id_user, $id_Wine)); 
+        return $this->db->lastInsertId();
+    }  
 }

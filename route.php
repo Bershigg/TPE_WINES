@@ -60,9 +60,6 @@
         case 'createWine': 
             $ProductController->createWine(); //crear un vino -- agrega items admin
             break;
-        case 'createComments': 
-            $ProductController->createComments(); //crear un comentario -- agrega items admin
-            break;
         case 'deleteWine': 
             $ProductController->deleteWine($params[1]); //borro un vino -- 
             break;

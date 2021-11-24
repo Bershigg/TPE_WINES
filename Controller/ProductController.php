@@ -30,11 +30,6 @@ class ProductController{
         $this->view->showCrudLocation(); 
     }
 
-    function createComments(){
-        $this->AuthHelper->checkLoggedIn();
-        $this->modelComment->insertComment($_POST['content'], $_POST['qualification'], $_POST['id_user'], $_POST['id_Wine']);
-        $this->view->showCrudLocation(); 
-    }
 
     function deleteWine($id){
         $this->AuthHelper->checkLoggedIn();

@@ -29,7 +29,7 @@
                         <td> {$wine->Style} </td>                           
                         <td> {$wine->NameStore} </td>                           
                         <td> {$wine->Price} </td>
-                        <td> <a href="viewWine/{$wine->NameWine}"><button class="btn btn-outline-secondary">+</button></a> </td>
+                        <td> <a href="viewWine/{$wine->id_Wine}"><button class="btn btn-outline-secondary">+</button></a> </td>
                         {if $admin}
                         <td> <a class="btn btn-danger" href="deleteWine/{$wine->id_Wine}">Borrar</a></td>                
                         <td> <a class="btn btn-success" href="goUpdateWine/{$wine->id_Wine}">Modificar</a></td>                                     

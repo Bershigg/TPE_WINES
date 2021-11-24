@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-19 18:29:19
+/* Smarty version 3.1.39, created on 2021-11-24 01:37:06
   from 'C:\xampp\htdocs\TPE_WINES\templates\Winelist.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6197deef584737_51901810',
+  'unifunc' => 'content_619d89322152f4_54449476',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd4b8d49fa2f411d4a79d7f281157a43bff1a3926' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_WINES\\templates\\Winelist.tpl',
-      1 => 1637342957,
+      1 => 1637714215,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6197deef584737_51901810 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619d89322152f4_54449476 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -65,7 +65,7 @@ $_smarty_tpl->tpl_vars['wine']->do_else = false;
  </td>                           
                         <td> <?php echo $_smarty_tpl->tpl_vars['wine']->value->Price;?>
  </td>
-                        <td> <a href="viewWine/<?php echo $_smarty_tpl->tpl_vars['wine']->value->NameWine;?>
+                        <td> <a href="viewWine/<?php echo $_smarty_tpl->tpl_vars['wine']->value->id_Wine;?>
 "><button class="btn btn-outline-secondary">+</button></a> </td>
                         <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
                         <td> <a class="btn btn-danger" href="deleteWine/<?php echo $_smarty_tpl->tpl_vars['wine']->value->id_Wine;?>
