@@ -2,14 +2,23 @@ body{
     background-image: url("../images/fondovinoteca2.jpg");
     background-size:cover;
     font-weight: bold;
+    color:white;
 
 }
 
-form {
+footer{
+    width: 100%;
+    z-index: auto;
+    margin-top: 12%;
+    justify-items: center;
+  
+}
+
+form  {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15%;
+   
 }
 
 .logo {
@@ -63,18 +72,6 @@ section a {
     border-top-right-radius: 10%;
 }
 
-th {
-    color: brown;
-}
-
-footer{
-    width: 100%;
-    z-index: auto;
-    margin-top: 12%;
-    justify-items: center;
-  
-}
-
 .carousel-inner img {
     max-width: 400px;
     max-height: 400px;
@@ -95,9 +92,7 @@ footer{
     justify-content: center;
 }
 
-.container-login, .container{
-    margin-top: 10%;
-}
+
 
 #secciones{
     display: flex;
@@ -105,12 +100,17 @@ footer{
 
 #submit {
     text-align: center;
+    width: 30%;
+    margin: 0% 35%;
 }
 
-#table-dark{
-    margin: 0px 600px;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
+.form-control {
+    border-block-color: brown;
 }
+
+#tabla-comentarios{
+    display: flex;
+    width: 20%;
+    margin-left: 40%;    
+}
+

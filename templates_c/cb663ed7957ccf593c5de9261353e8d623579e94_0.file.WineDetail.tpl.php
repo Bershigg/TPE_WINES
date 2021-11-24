@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-11-24 16:11:41
+/* Smarty version 3.1.39, created on 2021-11-25 00:33:20
   from 'C:\xampp\htdocs\TPE_WINES\templates\WineDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_619e562db38273_51116253',
+  'unifunc' => 'content_619ecbc08bf6c7_30738107',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cb663ed7957ccf593c5de9261353e8d623579e94' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_WINES\\templates\\WineDetail.tpl',
-      1 => 1637766654,
+      1 => 1637796798,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_619e562db38273_51116253 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619ecbc08bf6c7_30738107 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="container">
@@ -35,7 +35,7 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
         <h2> Descripción: <?php echo $_smarty_tpl->tpl_vars['descripcion']->value;?>
  </h2>
         
-    <a href="wines" class="btn btn-success"> Volver a lista de vinos</a>
+    <a href="wines" class="btn btn-success" id="btn-volverVinos"> Volver a lista de vinos</a>
 </div>
 
 
@@ -54,28 +54,23 @@ $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cach
 " required>
     <input type="hidden" name="id_Wine" id="id_Wine" value="<?php echo $_smarty_tpl->tpl_vars['wine']->value->id_Wine;?>
 " required>
-    <button class="form-control" type="submit" class="btn btn-primary" id="enviar">Crear</button>   
+    <button class="form-control" type="submit" class="btn btn-primary" id="enviar">Comentar</button>   
 </form>
 
 
 <h2>Lista de comentarios</h2>
 
-<button class="comentarios" data-id="<?php echo $_smarty_tpl->tpl_vars['wine']->value->id_Wine;?>
+    <table id="tabla-comentarios" class="table table-bordered">
+                <thead>
+                    <td class="form-control">
+ 
+                    </td>
+                </thead>
+                <tbody class="form-control" id="list-comments" data-id="<?php echo $_smarty_tpl->tpl_vars['wine']->value->id_Wine;?>
 " data-rol="<?php echo $_smarty_tpl->tpl_vars['user']->value->admin;?>
-">mostrar comentarios</button>
-
-<table id="table-dark">
-            <thead>
-                <tr class="table-dark">
-                    <th>Usuario</th>
-                    <th>Contenido</th>
-                    <th>Valoracion</th> 
-                    <th>Borrar</th>  
-                </tr>
-            </thead>
-            <tbody class="table-dark" id="list-comments">
-            </tbody>
-</table>
+">
+                </tbody>
+    </table>
 
 
 

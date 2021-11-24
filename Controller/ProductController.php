@@ -1,5 +1,5 @@
 <?php
-require_once "./Model/CommentModel.php";
+
 require_once "./Model/ProductModel.php";
 require_once "./Model/CategoryModel.php";
 require_once "./Model/UserModel.php";
@@ -10,7 +10,6 @@ class ProductController{
 
     private $modelUser;
     private $modelProduct;
-    private $modelComment;
     private $modelCategory;
     private $view;
     private $AuthHelper;
@@ -18,7 +17,6 @@ class ProductController{
     function __construct(){
         $this->modelUser = new UserModel();
         $this->modelProduct = new ProductModel();
-        $this->modelComment = new CommentModel();
         $this->modelCategory = new CategoryModel();
         $this->view = new ProductView();
         $this->AuthHelper = new AuthHelper();

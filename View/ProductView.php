@@ -20,7 +20,7 @@ class ProductView{
         header("Location: ".BASE_URL."viewWine");
     }
 
-    function showCrudLocation(){
+    function showCrudLocation($mensaje = null){
         header("Location: ".BASE_URL."wines");
     }
 

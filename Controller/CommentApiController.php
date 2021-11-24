@@ -21,7 +21,6 @@ class CommentApiController {
     }
 
     function getComments(){
-        $id_wine = $this->modelProduct->getWine($_GET["id_Wine"]);
         $comments = $this->modelComment->getComments();
         return $this->view->response($comments, 200);
     }

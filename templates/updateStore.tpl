@@ -8,4 +8,3 @@
         <input type="submit" class="btn btn-primary" value="Editar">
     </form>
 
-{include file='templates/footer.tpl'}

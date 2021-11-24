@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-10-14 14:21:48
+/* Smarty version 3.1.39, created on 2021-11-24 17:11:48
   from 'C:\xampp\htdocs\TPE_WINES\templates\WinesForStore.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_616820dc0e82b4_95373483',
+  'unifunc' => 'content_619e6444a370c3_44951527',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '53382c98b46e4c9c4c9699b459a9f62d08b272ed' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE_WINES\\templates\\WinesForStore.tpl',
-      1 => 1634214088,
+      1 => 1637770304,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_616820dc0e82b4_95373483 (Smarty_Internal_Template $_smarty_tpl) {
+function content_619e6444a370c3_44951527 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:templates/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -60,7 +60,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 
     </table>
 
-    <a href="showListStore" class="btn btn-success">Volver a lista de bodegas</a>
+    <a href="ListStore" class="btn btn-success">Volver a lista de bodegas</a>
 </div>
 <?php $_smarty_tpl->_subTemplateRender('file:templates/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

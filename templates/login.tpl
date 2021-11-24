@@ -9,5 +9,3 @@
     </form>
 </div>
 <h4>{$error} </h4>
-
-{include file='templates/footer.tpl'}

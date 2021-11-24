@@ -5,7 +5,7 @@
         <h2> Bodega : {$wine->NameStore}</h2>
         <h2> Descripción: {$descripcion} </h2>
         
-    <a href="wines" class="btn btn-success"> Volver a lista de vinos</a>
+    <a href="wines" class="btn btn-success" id="btn-volverVinos"> Volver a lista de vinos</a>
 </div>
 
 
@@ -22,26 +22,21 @@
     </select></label>
     <input type="hidden" name="id_user" id="id_user" value="{$user->id_user}" required>
     <input type="hidden" name="id_Wine" id="id_Wine" value="{$wine->id_Wine}" required>
-    <button class="form-control" type="submit" class="btn btn-primary" id="enviar">Crear</button>   
+    <button class="form-control" type="submit" class="btn btn-primary" id="enviar">Comentar</button>   
 </form>
 
 
 <h2>Lista de comentarios</h2>
 
-<button class="comentarios" data-id="{$wine->id_Wine}" data-rol="{$user->admin}">mostrar comentarios</button>
-
-<table id="table-dark">
-            <thead>
-                <tr class="table-dark">
-                    <th>Usuario</th>
-                    <th>Contenido</th>
-                    <th>Valoracion</th> 
-                    <th>Borrar</th>  
-                </tr>
-            </thead>
-            <tbody class="table-dark" id="list-comments">
-            </tbody>
-</table>
+    <table id="tabla-comentarios" class="table table-bordered">
+                <thead>
+                    <td class="form-control">
+ 
+                    </td>
+                </thead>
+                <tbody class="form-control" id="list-comments" data-id="{$wine->id_Wine}" data-rol="{$user->admin}">
+                </tbody>
+    </table>
 
 
 
