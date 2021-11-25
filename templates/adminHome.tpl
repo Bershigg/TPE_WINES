@@ -1,6 +1,5 @@
 {include file='templates/header.tpl'}
 
-<h2>Seleccione que quiere administrar</h2>
 
 <div id="secciones">
     <section class="sectionadmin">
